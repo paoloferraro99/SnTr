@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-MAST::Application.config.secret_key_base = 'ebb2e56301ec898bbe46c2389ba08ffba767579a9da5df0d772551f3a38a0991a67dcb1c5eea28e2302cf42d9d8398c7d77e1d0ee3aab92c495e787710193d73'
+MAST::Application.config.secret_key_base = ENV['SECRET_KEY_BASE']

@@ -5,6 +5,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :last_name
       t.string :first_name
       t.string :screen_name
+      t.string :shipping_address
+      t.string :role
       # t.integer :chronological_order
 
       t.string :email,              null: false, default: ""
