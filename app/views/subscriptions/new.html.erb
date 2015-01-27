@@ -1,0 +1,33 @@
+<h1>Subscribe to a Subscription</h1>
+
+<div class="row">
+   
+  <div class="col-md-8">
+    <%= form_for @subscription do |f| %>
+   
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control', placeholder: "Enter Subscription Name" %>
+      </div>
+
+  <div class="form-group">
+    <%= f.label :months_subscribed %>
+    <%= f.number_field :months_subscribed, class: 'form-control', placeholder: "How many months" %>
+  </div>
+       
+
+      <div class="form-group">
+        <%= f.label :primary %> - Check if this is your primary subscription
+        <%= f.check_box :primary, class: 'form-control' %>
+      </div>
+
+
+      <div class="form-group">
+        <%= f.submit "Save", class: 'btn btn-success' %>
+      </div>
+    <% end %>
+
+  </div>
+
+  
+</div>

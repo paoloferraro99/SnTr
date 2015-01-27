@@ -4,6 +4,7 @@ class CreateSubscriptions < ActiveRecord::Migration
 
       t.references :user, index: true
 
+      t.string :name
       t.boolean :primary, default: false
 
       t.string :start_destination

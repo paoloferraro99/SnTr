@@ -6,6 +6,8 @@ class CreateDestinations < ActiveRecord::Migration
       t.string :region
       t.string :country
 
+      t.boolean :released, default: false
+
       t.integer :individual_price
 
       t.integer :chronological_order

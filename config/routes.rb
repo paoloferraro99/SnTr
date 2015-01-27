@@ -1,10 +1,16 @@
 MAST::Application.routes.draw do
 
-
-  devise_for :users
   root to: 'welcome#index'
+  
+  devise_for :users
 
-  resources :charges, only: [:new, :create]
+
+  resources :users, only: [:show]
+  resources :subscriptions, only: [:index, :show, :new, :create, :destroy]
+  resources :destinations, only: [:index]
+  
+
+
 
 
 

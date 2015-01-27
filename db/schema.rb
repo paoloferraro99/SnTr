@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20150120195727) do
     t.string   "name"
     t.string   "region"
     t.string   "country"
+    t.boolean  "released",            default: false
     t.integer  "individual_price"
     t.integer  "chronological_order"
     t.datetime "created_at"
@@ -40,6 +41,7 @@ ActiveRecord::Schema.define(version: 20150120195727) do
 
   create_table "subscriptions", force: true do |t|
     t.integer  "user_id"
+    t.string   "name"
     t.boolean  "primary",                        default: false
     t.string   "start_destination"
     t.integer  "months_subscribed"
