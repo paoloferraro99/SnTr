@@ -3,7 +3,26 @@
 
 
   <div class="col-md-12">
+    <%= link_to "Create Destination", new_destination_path, class: 'btn btn-success' %>
   </div>
 
+
+<% @destinations.each do |dest| %>
+    <div class="col-md-12">
+      <%= link_to dest.name, dest %> - <%= link_to dest.chronological_order, dest %>
+    </div>
+  <% end %>
+
+
+  <div class="col-md-12">
+  </div>
+
+
+  <div class="col-md-12">
+  </div>
+
+
+  <div class="col-md-12">
+  </div>
   
 </div>

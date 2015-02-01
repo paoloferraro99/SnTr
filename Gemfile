@@ -39,7 +39,7 @@ gem 'kaminari'
 gem 'hiredis'
 gem 'redis', ">= 2.2.0"
 
-gem 'stripe'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

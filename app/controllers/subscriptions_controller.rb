@@ -1,5 +1,7 @@
 class SubscriptionsController < ApplicationController
 
+  # before_filter :authenticate_user!
+
   def index
   end
 
@@ -19,19 +21,40 @@ class SubscriptionsController < ApplicationController
     # @subscription.add_destination(dest)
 
     if @subscription.save
+
+      ####################################################################
+        # arr = [Destination.all.cronological_order]
+          # {destination: :chronological_order, ...}
+
+        #       ---start with first
+        # dest_list = arr.select { |a| a <= @subscription.months_subscribed}
+
+        #       ---with specific start_destination
+        # dest_list = arr.select { |a| start_dest.chronological_order <= a <= (start_dest.chronolical_order + @subscription.months_subscribed)}
+      #####################################################################
+
+      starting_position = 0
+
+      # if self.start_destination.present?
+      #   starting_postion = Destination.where(:name => self.start_destination).first.chronological_order
+      # end
+      
+      months = @subscription.months_subscribed
+      dest_list = Destination.where("chronological_order >= ?", starting_position).order(chronological_order: :asc).limit(months)
+##############################################################################
+      # x = @subscription.months_subscribed
+      # dest_list = Destination.where(chronological_order: 2..5)
+
+      dest_list.each do |dest|
+        @subscription.add_destination(dest)
+      end
+
+
+      # dest = Destination.find_by_chronological_order(@subscription.months_subscribed - 1)
+      # # dest = Destination.where(chronological_order: 2..5)
+      # @subscription.add_destination(dest)
       flash[:notice] = "Subscription saved."
-
-      #  number of months to choose destinations in sequence?
-      # number of months
-      # ary + chron order of first dest to find starting point
-      # arr.select { |a| a > months subbed > (starting point + months subbed }
-        # @subscription.start_destination.chron_order
-        # block for start destination test selection button
-
-      dest = Destination.find_by_chronological_order(@subscription.months_subscribed - 1)
-      @subscription.add_destination(dest)
-
-      redirect_to @subscription
+      redirect_to new_subscribe_path
     else
       flash[:error] = "Error saving subscription. Try again."
       render :new

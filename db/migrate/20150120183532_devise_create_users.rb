@@ -9,6 +9,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :role
       # t.integer :chronological_order
 
+      t.string :stripe_id
+
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 

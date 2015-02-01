@@ -52,6 +52,7 @@ israel = Destination.new(
    region:        'Middle East',
    country:       'Israel',
 
+   individual_price: 10,
    chronological_order: 1,
 )
 israel.save!
@@ -61,6 +62,7 @@ america = Destination.new(
    region:        'North America',
    country:       'United States',
 
+   individual_price: 10,
    chronological_order: 2,
 )
 america.save!
@@ -70,6 +72,7 @@ bulgaria = Destination.new(
    region:        'Europe Southeastern',
    country:       'United States',
 
+   individual_price: 10,
    chronological_order: 3,
 )
 bulgaria.save!
@@ -79,6 +82,7 @@ colombia = Destination.new(
    region:        'South America',
    country:       'Colombia',
 
+   individual_price: 10,
    chronological_order: 4,
 )
 colombia.save!
@@ -88,6 +92,7 @@ denmark = Destination.new(
    region:        'Europe Northern',
    country:       'United States',
 
+   individual_price: 10,
    chronological_order: 5,
 )
 denmark.save!
@@ -97,9 +102,66 @@ ethiopia = Destination.new(
    region:        'Africa',
    country:       'Ethiopia',
 
+   individual_price: 10,
    chronological_order: 6,
 )
 ethiopia.save!
+
+france = Destination.new(
+   name:          'France: Escargot',
+   region:        'Europe Western',
+   country:       'France',
+
+   individual_price: 10,
+   chronological_order: 7,
+)
+france.save!
+
+greatbritain = Destination.new(
+   name:          'Great Britain: Mush',
+   region:        'Europe Western',
+   country:       'United Kingdom',
+
+   individual_price: 10,
+   chronological_order: 8,
+)
+greatbritain.save!
+holland = Destination.new(
+   name:          'Holland: Kibbeling',
+   region:        'Europe Western',
+   country:       'Netherlands',
+
+   individual_price: 10,
+   chronological_order: 9,
+)
+holland.save!
+iceland = Destination.new(
+   name:          'Iceland: Puffin Roast',
+   region:        'Europe Western',
+   country:       'Iceland',
+
+   individual_price: 10,
+   chronological_order: 10,
+)
+iceland.save!
+japan = Destination.new(
+   name:          'Japan: Sushi',
+   region:        'Asia East',
+   country:       'Japan',
+
+   individual_price: 10,
+   chronological_order: 11,
+)
+japan.save!
+korea = Destination.new(
+   name:          'Korea: BBQ Shortribs',
+   region:        '',
+   country:       '',
+
+   individual_price: 10,
+   chronological_order: 12,
+)
+korea.save!
 
 puts "Seed finished"
 puts "#{User.count} users created"

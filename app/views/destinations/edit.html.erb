@@ -1,0 +1,42 @@
+
+
+<h1>Edit Destination</h1>
+<div class="row">
+   
+  <div class="col-md-8">
+
+    <%= form_for @destination do |f| %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control', placeholder: "Destination Name" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :region %>
+        <%= f.text_field :region, class: 'form-control', placeholder: "Region" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :country %>
+        <%= f.text_field :country, class: 'form-control', placeholder: "Country" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :released %> - Check if destination has been released
+        <%= f.check_box :released, class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :individual_price %>
+        <%= f.number_field :individual_price, class: 'form-control', placeholder: "Individual Price" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :chronological_order %>
+        <%= f.number_field :chronological_order, class: 'form-control', placeholder: "Chronological order of destination" %>
+      </div>
+       
+      
+
+      <div class="form-group">
+        <%= f.submit "Save", class: 'btn btn-success' %>
+      </div>
+    <% end %>
+
+  </div>
