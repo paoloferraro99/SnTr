@@ -47,8 +47,8 @@
 <div class="col-md-12">
 <% if current_user %>
 
-  <%=link_to "", class: 'btn btn-success', data: {target: @cart_action, addUrl: add_to_cart_path(@destination), removeUrl: remove_from_cart_path(@destination)} do%>
-  
+  <%=link_to "", class: 'btn btn-info', data: {target: @cart_action, addUrl: add_to_cart_path(@destination), removeUrl: remove_from_cart_path(@destination)} do%>
+
       <span><%=@cart_action%></span> Cart
       <i class="glyphicon glyphicon-shopping-cart"></i>
 

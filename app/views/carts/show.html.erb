@@ -1,16 +1,29 @@
-<div class="text-center large">
+<div id="mycart" class="text-center large">
 
   <div class="col-md-12">
     <h1>Your Cart</h1>
   </div>
 
   <div class="col-md-12">
-    <%= @cart_ids %>
+    <h3>Your <mark><span class="cart-count"><%=current_user.cart_count%></span></mark> items:</h3>
   </div>
 
-  <div class="col-md-12">
+  <% @cart_destinations.each do |dest|%>
+    <div class="cart-dest col-md-12">
 
-  </div>
+      <h5>
+        <%= dest.name %>
+        $<%= dest.individual_price %>
+
+        <%=link_to "", data: {targetUrl: remove_from_cart_path(dest)} do%>
+          <i class="x-out glyphicon glyphicon-remove text-danger"></i>
+        <%end%>
+      </h5>
+
+    </div>
+  
+  <% end%>
+
 
   <div class="col-md-12">
 
@@ -21,3 +34,5 @@
   </div>
 
 </div>
+
+

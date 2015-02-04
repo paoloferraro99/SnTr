@@ -1,12 +1,14 @@
 
 
 class CartsController < ApplicationController
+
+  respond_to :html, :js
   
- before_action :authenticate_user!
+  before_action :authenticate_user!
  
   def show
-    @cart_ids = REDIS.smembers current_user_cart
-    # @cart_destinations = Destination.find(cart_ids)
+    cart_ids = REDIS.smembers current_user_cart
+    @cart_destinations = Destination.find(cart_ids)
   end
  
   def add

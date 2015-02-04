@@ -1,5 +1,7 @@
 class DestinationsController < ApplicationController
 
+  respond_to :html, :js
+
   def index
     @destinations = Destination.all
 
