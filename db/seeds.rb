@@ -155,8 +155,8 @@ japan = Destination.new(
 japan.save!
 korea = Destination.new(
    name:          'Korea: BBQ Shortribs',
-   region:        '',
-   country:       '',
+   region:        'Asia East',
+   country:       'Korea',
 
    individual_price: 10,
    chronological_order: 12,

@@ -8,16 +8,19 @@
   </div>
 
   <div class="col-md-12">
-    <h3><%= @destination.name %></h3>
+    <h2><%= @destination.country %></h2>
   </div>
 
+  <div class="col-md-12">
+    <h3>$<%= @destination.individual_price %></h3>
+  </div>
+
+  <div class="col-md-12">
+    <h5>Name: <%= @destination.name %></h5>
+  </div>
 
   <div class="col-md-12">
     Region: <%= @destination.region %>
-  </div>
-
-  <div class="col-md-12">
-    Country: <%= @destination.country %>
   </div>
 
   <div class="col-md-12">
@@ -25,28 +28,31 @@
   </div>
 
   <div class="col-md-12">
-    Individual price: <%= @destination.individual_price %>
-  </div>
-
-  <div class="col-md-12">
     Chronological order: <%= @destination.chronological_order %>
   </div>
 
   <div class="col-md-12">
-    Created at: <%= @destination.created_at %>
-  </div>
-
-  <div class="col-md-12">
-    Updated at: <%= @destination.updated_at %>
-  </div>
-
-
-  <div class="col-md-12">
     .......................................................
   </div>
+  
   <div class="col-md-12">
 
   </div>
-  <%= link_to "Destinations", destinations_path %>
 
 </div>
+
+
+
+
+<div class="col-md-12">
+<% if current_user %>
+
+  <%=link_to "", class: 'btn btn-success', data: {target: @cart_action, addUrl: add_to_cart_path(@destination), removeUrl: remove_from_cart_path(@destination)} do%>
+  
+      <span><%=@cart_action%></span> Cart
+      <i class="glyphicon glyphicon-shopping-cart"></i>
+
+  <%end%>
+
+<%end%>
+  </div>

@@ -22,23 +22,15 @@ class SubscriptionsController < ApplicationController
 
     if @subscription.save
 
-      ####################################################################
-        # arr = [Destination.all.cronological_order]
-          # {destination: :chronological_order, ...}
+#########################################################################################
 
-        #       ---start with first
-        # dest_list = arr.select { |a| a <= @subscription.months_subscribed}
-
-        #       ---with specific start_destination
-        # dest_list = arr.select { |a| start_dest.chronological_order <= a <= (start_dest.chronolical_order + @subscription.months_subscribed)}
-      #####################################################################
-
-      starting_position = 0
+      # starting_position = 0
 
       # if self.start_destination.present?
       #   starting_postion = Destination.where(:name => self.start_destination).first.chronological_order
       # end
-      
+      #####################################################
+      starting_position = 1
       months = @subscription.months_subscribed
       dest_list = Destination.where("chronological_order >= ?", starting_position).order(chronological_order: :asc).limit(months)
 ##############################################################################
@@ -54,7 +46,8 @@ class SubscriptionsController < ApplicationController
       # # dest = Destination.where(chronological_order: 2..5)
       # @subscription.add_destination(dest)
       flash[:notice] = "Subscription saved."
-      redirect_to new_subscribe_path
+      # redirect_to new_subscribe_path
+      redirect_to current_user #skip payment for test
     else
       flash[:error] = "Error saving subscription. Try again."
       render :new

@@ -9,7 +9,7 @@
 
 <% @destinations.each do |dest| %>
     <div class="col-md-12">
-      <%= link_to dest.name, dest %> - <%= link_to dest.chronological_order, dest %>
+      <%= dest.chronological_order %> - <%= link_to dest.name, dest %> - $<%= dest.individual_price %>
     </div>
   <% end %>
 

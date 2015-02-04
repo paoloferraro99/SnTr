@@ -8,6 +8,10 @@ class DestinationsController < ApplicationController
   def show
     @destination = Destination.find(params[:id])
 
+    # for cart
+    @cart_action = @destination.cart_action current_user.try :id
+    #
+
   end
   
   def new

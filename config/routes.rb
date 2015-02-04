@@ -1,5 +1,6 @@
 MAST::Application.routes.draw do
 
+  get "carts/show"
   root to: 'welcome#index'
   
   devise_for :users
@@ -9,6 +10,11 @@ MAST::Application.routes.draw do
   resources :subscriptions, only: [:index, :show, :new, :create, :destroy]
   resources :destinations, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :subscribe, only: [:new, :create]
+
+  resource :cart, only: [:show] do
+    put 'add/:destination_id', to: 'carts#add', as: :add_to
+    put 'remove/:destination_id', to: 'carts#remove', as: :remove_from
+  end
   
 
 
