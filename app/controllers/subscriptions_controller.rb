@@ -34,17 +34,11 @@ class SubscriptionsController < ApplicationController
       months = @subscription.months_subscribed
       dest_list = Destination.where("chronological_order >= ?", starting_position).order(chronological_order: :asc).limit(months)
 ##############################################################################
-      # x = @subscription.months_subscribed
-      # dest_list = Destination.where(chronological_order: 2..5)
-
+    
       dest_list.each do |dest|
         @subscription.add_destination(dest)
       end
-
-
-      # dest = Destination.find_by_chronological_order(@subscription.months_subscribed - 1)
-      # # dest = Destination.where(chronological_order: 2..5)
-      # @subscription.add_destination(dest)
+      
       flash[:notice] = "Subscription saved."
       # redirect_to new_subscribe_path
       redirect_to current_user #skip payment for test

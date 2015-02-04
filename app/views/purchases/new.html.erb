@@ -1,0 +1,37 @@
+
+
+<div class="text-center large">
+
+  <%= form_tag purchases_path do %>
+    
+    <div class="col-md-12">
+      <h1>Checkout</h1>
+    </div>
+
+    <div class="col-md-12">
+      <h2>You have <%= current_user.cart_count %> items:</h2>
+    </div>
+
+    <% current_user.get_cart_destinations.each do |dest| %>
+      <div class="col-md-12">
+        <%= dest.name %> - 
+        $<%= dest.individual_price %>.00
+      </div>
+     <% end %>
+
+    <div class="col-md-12">
+      <label class="amount">
+        <h2>Total amount: $<%= current_user.cart_total_price %>.00</h2>
+
+      </label>
+    </div>
+
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= @stripe_btn_data[:key] %>" data-amount=<%= @stripe_btn_data[:amount] %> data-description="<%= @stripe_btn_data[:description] %>" ></script>
+  <% end %>
+
+</div>
+
+
+<%= current_user.cart_count %>
+
+

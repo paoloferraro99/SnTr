@@ -1,6 +1,7 @@
 MAST::Application.routes.draw do
 
-  get "carts/show"
+
+
   root to: 'welcome#index'
   
   devise_for :users
@@ -16,6 +17,7 @@ MAST::Application.routes.draw do
     put 'remove/:destination_id', to: 'carts#remove', as: :remove_from
   end
   
+  resources :purchases, only: [:new, :create]
 
 
 
