@@ -12,7 +12,7 @@ MAST::Application.routes.draw do
   resources :destinations, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :subscribe, only: [:new, :create]
 
-  resource :cart, only: [:show] do
+  resource :cart, only: [:create, :destroy, :show] do
     put 'add/:destination_id', to: 'carts#add', as: :add_to
     put 'remove/:destination_id', to: 'carts#remove', as: :remove_from
   end

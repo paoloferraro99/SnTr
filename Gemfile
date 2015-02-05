@@ -42,6 +42,8 @@ gem 'hiredis'
 gem 'redis', ">= 2.2.0"
 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'simpler_state_machine'
+gem 'whenever'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

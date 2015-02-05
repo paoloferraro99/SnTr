@@ -1,5 +1,3 @@
-
-
 class CartsController < ApplicationController
 
   respond_to :html, :js
@@ -11,12 +9,12 @@ class CartsController < ApplicationController
     @cart_destinations = Destination.find(cart_ids)
   end
  
-  def add
+  def create
     REDIS.sadd current_user_cart, params[:destination_id]
     render json: current_user.cart_count, status: 200
   end
  
-  def remove
+  def destroy
     REDIS.srem current_user_cart, params[:destination_id]
     render json: current_user.cart_count, status: 200
   end

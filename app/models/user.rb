@@ -27,17 +27,17 @@ class User < ActiveRecord::Base
 
   # Purchasing methods
   def purchase_cart_destinations!
-    get_cart_destinations.each { |dest| purchase(dest) }
+    get_cart_destinations.each { |dest| purchase!(dest) }
     REDIS.del "cart#{id}"
   end
 
-  def purchase?(movie)
-    movies.include?(movie)
-  end
 
-  def purchase(movie)
-    movies << movie unless purchase?(movie)
+#############################
+  def purchase!(dest)
+    self.orders.create!(shipping_address: current_user.shipping_address,
+      destination_name: dest.name)
   end
+  ##############################
   #
 
 end

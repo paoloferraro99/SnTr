@@ -32,6 +32,8 @@ class PurchasesController < ApplicationController
       :customer => customer.id
   )
 
+  # exaime what returns from charge and save the unique id for that
+  
   # Save the customer ID in your database so you can use it later
   save_stripe_customer_id(user, customer.id)
 
