@@ -18,7 +18,7 @@ class SubscribeController < ApplicationController
     current_user.update_attribute(:role, 'subscriber')
     current_user.stripe_id = customer.id
     current_user.save
-    flash[:notice] = "You are now travelling."
+    flash[:notice] = "OK"
     redirect_to current_user
 
     rescue Stripe::CardError => e

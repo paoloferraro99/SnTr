@@ -48,7 +48,7 @@ andrew.save!
 ###############################################
 
 israel = Destination.new(
-   name:          'Israel: Cherry Breaking',
+   name:          'A',
    region:        'Middle East',
    country:       'Israel',
 
@@ -58,7 +58,7 @@ israel = Destination.new(
 israel.save!
 
 america = Destination.new(
-   name:          'America: Never Like the First Time',
+   name:          'B',
    region:        'North America',
    country:       'United States',
 
@@ -68,7 +68,7 @@ america = Destination.new(
 america.save!
 
 bulgaria = Destination.new(
-   name:          'Bulgaria: Tripe Soup',
+   name:          'C',
    region:        'Europe Southeastern',
    country:       'United States',
 
@@ -78,7 +78,7 @@ bulgaria = Destination.new(
 bulgaria.save!
 
 colombia = Destination.new(
-   name:          'Colombia: Arepa and Chorizo',
+   name:          'D',
    region:        'South America',
    country:       'Colombia',
 
@@ -88,7 +88,7 @@ colombia = Destination.new(
 colombia.save!
 
 denmark = Destination.new(
-   name:          'Denmark: Meat an Fish',
+   name:          'E',
    region:        'Europe Northern',
    country:       'United States',
 
@@ -98,7 +98,7 @@ denmark = Destination.new(
 denmark.save!
 
 ethiopia = Destination.new(
-   name:          'Ethiopia: Injera',
+   name:          'F',
    region:        'Africa',
    country:       'Ethiopia',
 
@@ -108,7 +108,7 @@ ethiopia = Destination.new(
 ethiopia.save!
 
 france = Destination.new(
-   name:          'France: Escargot',
+   name:          'G',
    region:        'Europe Western',
    country:       'France',
 
@@ -118,7 +118,7 @@ france = Destination.new(
 france.save!
 
 greatbritain = Destination.new(
-   name:          'Great Britain: Mush',
+   name:          'H',
    region:        'Europe Western',
    country:       'United Kingdom',
 
@@ -127,7 +127,7 @@ greatbritain = Destination.new(
 )
 greatbritain.save!
 holland = Destination.new(
-   name:          'Holland: Kibbeling',
+   name:          'I',
    region:        'Europe Western',
    country:       'Netherlands',
 
@@ -136,7 +136,7 @@ holland = Destination.new(
 )
 holland.save!
 iceland = Destination.new(
-   name:          'Iceland: Puffin Roast',
+   name:          'J',
    region:        'Europe Western',
    country:       'Iceland',
 
@@ -145,7 +145,7 @@ iceland = Destination.new(
 )
 iceland.save!
 japan = Destination.new(
-   name:          'Japan: Sushi',
+   name:          'K',
    region:        'Asia East',
    country:       'Japan',
 
@@ -154,7 +154,7 @@ japan = Destination.new(
 )
 japan.save!
 korea = Destination.new(
-   name:          'Korea: BBQ Shortribs',
+   name:          'L',
    region:        'Asia East',
    country:       'Korea',
 
